@@ -1,11 +1,11 @@
 package com.example.panier.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
-
-
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,9 +19,17 @@ public class Commande {
 
     private Date date;
 
+    // Constructor that takes both products and date
+    @Ignore // Tell Room to ignore this constructor
     public Commande(List<Product> products, Date date) {
         this.products = products;
         this.date = date;
+    }
+
+    // Constructor that only takes date, which Room will use
+    public Commande(Date date) {
+        this.date = date;
+        this.products = new ArrayList<>(); // Initialize with an empty list or as required
     }
 
     public int getId() {

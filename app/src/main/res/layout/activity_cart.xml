@@ -14,24 +14,34 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- RecyclerView to display cart items -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCart"
+        <!-- Container for dynamically added product items -->
+        <LinearLayout
+            android:id="@+id/linearLayoutCartItems"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:orientation="vertical"
             android:clipToPadding="false"
-            android:scrollbars="vertical" />
+            android:paddingBottom="16dp"/>
 
-        <!-- TextView to display total price -->
+        <!-- TextView for total price -->
         <TextView
             android:id="@+id/textViewTotalPrice"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             android:text="Total: $0.00"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:padding="8dp" />
+
+        <!-- Button for creating the order -->
+        <Button
+            android:id="@+id/buttonOrderNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Now"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

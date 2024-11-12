@@ -30,8 +30,10 @@ public interface ProductDao {
 
     @Query("UPDATE products SET inCart = :isInCart WHERE id = :productId")
     void updateProductInCartStatus(int productId, boolean isInCart);
-
-
+    @Query("DELETE FROM products WHERE panierId IS NOT NULL")
+    void clearCart();
+    @Query("UPDATE products SET panierId = NULL WHERE id = :productId")
+    void removeFromCart(int productId);
 
 
 
