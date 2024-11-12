@@ -49,4 +49,9 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.0") // Dernière version
     implementation("androidx.cardview:cardview:1.0.0")
     implementation ("com.google.code.gson:gson:2.8.9")
+    implementation ("com.stripe:stripe-android:20.11.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+
 }
